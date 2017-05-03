@@ -24,10 +24,10 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGY-iS-NTS">
                                 <rect key="frame" x="62.5" y="208.5" width="250" height="250"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="Jqx-dh-WC1"/>
-                                    <constraint firstAttribute="height" constant="250" id="S2R-tH-w9s"/>
+                                    <constraint firstAttribute="width" constant="250" id="29C-lt-FWs"/>
+                                    <constraint firstAttribute="height" constant="250" id="YuR-hh-hlA"/>
                                 </constraints>
-                                <state key="normal" title="Check in" image="checkInCircle.png"/>
+                                <state key="normal" title="Check in" image="checkInCircle2.png"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBA-h1-WgW">
                                 <rect key="frame" x="147.5" y="273" width="80" height="121"/>
@@ -40,7 +40,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2u-ZQ-xjc">
                                 <rect key="frame" x="123" y="527" width="128" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -50,13 +50,12 @@
                             <constraint firstItem="K2u-ZQ-xjc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HKH-Ag-drT"/>
                             <constraint firstItem="cGY-iS-NTS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PVb-gf-jFE"/>
                             <constraint firstItem="rBA-h1-WgW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Q4C-R8-u3X"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="K2u-ZQ-xjc" secondAttribute="bottom" constant="119" id="SCn-1j-Wo4"/>
                             <constraint firstItem="cGY-iS-NTS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="WVO-T5-WZ8"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="K2u-ZQ-xjc" secondAttribute="bottom" constant="119" id="gho-Vg-0aP"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="checkInButton" destination="cGY-iS-NTS" id="YfL-8d-Tj5"/>
-                        <outlet property="locationLabel" destination="K2u-ZQ-xjc" id="pzE-mw-DNl"/>
                         <outlet property="topCheckInButton" destination="rBA-h1-WgW" id="FnH-7o-JMc"/>
                     </connections>
                 </viewController>
@@ -66,7 +65,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="checkInCircle.png" width="456" height="456"/>
+        <image name="checkInCircle2.png" width="466" height="468"/>
         <image name="checkInPinGrey.png" width="153" height="251"/>
     </resources>
 </document>
