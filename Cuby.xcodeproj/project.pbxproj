@@ -15,6 +15,9 @@
 		04B58F5E1EB91978001B24D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B58F5C1EB91978001B24D1 /* LaunchScreen.storyboard */; };
 		04B58F691EB91978001B24D1 /* CubyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B58F681EB91978001B24D1 /* CubyTests.swift */; };
 		04B58F741EB91978001B24D1 /* CubyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B58F731EB91978001B24D1 /* CubyUITests.swift */; };
+		04B58F821EBA28DB001B24D1 /* checkInCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B58F811EBA28DB001B24D1 /* checkInCircle.png */; };
+		04B58F841EBA2BDC001B24D1 /* checkInPin.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B58F831EBA2BDC001B24D1 /* checkInPin.png */; };
+		04B58F861EBA2E06001B24D1 /* checkInPinGrey.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B58F851EBA2E06001B24D1 /* checkInPinGrey.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		04B58F6F1EB91978001B24D1 /* CubyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CubyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B58F731EB91978001B24D1 /* CubyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubyUITests.swift; sourceTree = "<group>"; };
 		04B58F751EB91978001B24D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04B58F811EBA28DB001B24D1 /* checkInCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkInCircle.png; sourceTree = "<group>"; };
+		04B58F831EBA2BDC001B24D1 /* checkInPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkInPin.png; sourceTree = "<group>"; };
+		04B58F851EBA2E06001B24D1 /* checkInPinGrey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkInPinGrey.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,9 @@
 				04B58F5C1EB91978001B24D1 /* LaunchScreen.storyboard */,
 				04B58F5F1EB91978001B24D1 /* Info.plist */,
 				04B58F571EB91978001B24D1 /* Cuby.xcdatamodeld */,
+				04B58F811EBA28DB001B24D1 /* checkInCircle.png */,
+				04B58F831EBA2BDC001B24D1 /* checkInPin.png */,
+				04B58F851EBA2E06001B24D1 /* checkInPinGrey.png */,
 			);
 			path = Cuby;
 			sourceTree = "<group>";
@@ -240,7 +249,10 @@
 			files = (
 				04B58F5E1EB91978001B24D1 /* LaunchScreen.storyboard in Resources */,
 				04B58F5B1EB91978001B24D1 /* Assets.xcassets in Resources */,
+				04B58F861EBA2E06001B24D1 /* checkInPinGrey.png in Resources */,
 				04B58F561EB91978001B24D1 /* Main.storyboard in Resources */,
+				04B58F821EBA28DB001B24D1 /* checkInCircle.png in Resources */,
+				04B58F841EBA2BDC001B24D1 /* checkInPin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +534,7 @@
 				04B58F7A1EB91978001B24D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04B58F7B1EB91978001B24D1 /* Build configuration list for PBXNativeTarget "CubyTests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +543,7 @@
 				04B58F7D1EB91978001B24D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04B58F7E1EB91978001B24D1 /* Build configuration list for PBXNativeTarget "CubyUITests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +552,7 @@
 				04B58F801EB91978001B24D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

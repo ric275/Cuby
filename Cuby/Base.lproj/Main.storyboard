@@ -21,13 +21,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGY-iS-NTS">
-                                <rect key="frame" x="157" y="318.5" width="60" height="30"/>
-                                <state key="normal" title="Check in"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGY-iS-NTS">
+                                <rect key="frame" x="62.5" y="208.5" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="Jqx-dh-WC1"/>
+                                    <constraint firstAttribute="height" constant="250" id="S2R-tH-w9s"/>
+                                </constraints>
+                                <state key="normal" title="Check in" image="checkInCircle.png"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2u-ZQ-xjc">
-                                <rect key="frame" x="123" y="593" width="128" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBA-h1-WgW">
+                                <rect key="frame" x="147.5" y="273" width="80" height="121"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="121" id="9dc-9k-7bz"/>
+                                    <constraint firstAttribute="width" constant="80" id="scW-5W-ruO"/>
+                                </constraints>
+                                <state key="normal" image="checkInPinGrey.png"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2u-ZQ-xjc">
+                                <rect key="frame" x="123" y="527" width="128" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -35,14 +46,27 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="rBA-h1-WgW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3k3-TG-VUl"/>
+                            <constraint firstItem="K2u-ZQ-xjc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HKH-Ag-drT"/>
                             <constraint firstItem="cGY-iS-NTS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PVb-gf-jFE"/>
+                            <constraint firstItem="rBA-h1-WgW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Q4C-R8-u3X"/>
                             <constraint firstItem="cGY-iS-NTS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="WVO-T5-WZ8"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="K2u-ZQ-xjc" secondAttribute="bottom" constant="119" id="gho-Vg-0aP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="checkInButton" destination="cGY-iS-NTS" id="YfL-8d-Tj5"/>
+                        <outlet property="locationLabel" destination="K2u-ZQ-xjc" id="pzE-mw-DNl"/>
+                        <outlet property="topCheckInButton" destination="rBA-h1-WgW" id="FnH-7o-JMc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-79.200000000000003" y="129.98500749625188"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="checkInCircle.png" width="456" height="456"/>
+        <image name="checkInPinGrey.png" width="153" height="251"/>
+    </resources>
 </document>
