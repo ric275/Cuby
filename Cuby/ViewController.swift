@@ -10,6 +10,14 @@ import UIKit
 import AVFoundation
 
 class ViewController: UIViewController {
+    
+    //Hide Status Bar
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    //Outlets
 
     @IBOutlet weak var checkInButton: UIButton!
     
@@ -17,13 +25,18 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var locationLabel: UILabel!
     
+    //Variables
+    
     var avPlayer: AVPlayer!
     var avPlayerLayer: AVPlayerLayer!
     var paused: Bool = false
-
     
+    //viewDidLoad
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Rotate icon
         
         let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
         rotateAnimation.fromValue = 0.0
@@ -33,14 +46,16 @@ class ViewController: UIViewController {
         
         checkInButton.layer.add(rotateAnimation, forKey: "myAnimationKey");
         
-        let theURL = Bundle.main.url(forResource:"city", withExtension: "mp4")
+        //Play background video
         
+        let theURL = Bundle.main.url(forResource:"test2", withExtension: "mp4")
         
         avPlayer = AVPlayer(url: theURL!)
         avPlayerLayer = AVPlayerLayer(player: avPlayer)
         avPlayerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
         avPlayer.volume = 0
         avPlayer.actionAtItemEnd = .none
+        avPlayer.rate = 0.25
         
         avPlayerLayer.frame = view.layer.bounds
         view.backgroundColor = .clear

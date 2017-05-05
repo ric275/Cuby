@@ -21,37 +21,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGY-iS-NTS">
-                                <rect key="frame" x="62.5" y="208.5" width="250" height="250"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="29C-lt-FWs"/>
-                                    <constraint firstAttribute="height" constant="250" id="YuR-hh-hlA"/>
-                                </constraints>
-                                <state key="normal" title="Check in" image="checkInCircle2.png"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBA-h1-WgW">
-                                <rect key="frame" x="147.5" y="273" width="80" height="121"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="121" id="9dc-9k-7bz"/>
-                                    <constraint firstAttribute="width" constant="80" id="scW-5W-ruO"/>
-                                </constraints>
-                                <state key="normal" image="checkInPinGrey.png"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2u-ZQ-xjc">
                                 <rect key="frame" x="123" y="527" width="128" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGY-iS-NTS">
+                                <rect key="frame" x="87" y="128" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="29C-lt-FWs"/>
+                                    <constraint firstAttribute="height" constant="200" id="YuR-hh-hlA"/>
+                                </constraints>
+                                <state key="normal" title="Check in" image="checkInCircle2.png"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBA-h1-WgW">
+                                <rect key="frame" x="123" y="164" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="9dc-9k-7bz"/>
+                                    <constraint firstAttribute="width" constant="128" id="scW-5W-ruO"/>
+                                </constraints>
+                                <state key="normal" image="locationIcon.png"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="rBA-h1-WgW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3k3-TG-VUl"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cGY-iS-NTS" secondAttribute="bottom" constant="339" id="6NA-9a-NvH"/>
+                            <constraint firstItem="rBA-h1-WgW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8C7-ir-OPh"/>
                             <constraint firstItem="K2u-ZQ-xjc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HKH-Ag-drT"/>
                             <constraint firstItem="cGY-iS-NTS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PVb-gf-jFE"/>
-                            <constraint firstItem="rBA-h1-WgW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Q4C-R8-u3X"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="K2u-ZQ-xjc" secondAttribute="bottom" constant="119" id="SCn-1j-Wo4"/>
-                            <constraint firstItem="cGY-iS-NTS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="WVO-T5-WZ8"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rBA-h1-WgW" secondAttribute="bottom" constant="375" id="ocg-Re-Pdt"/>
                         </constraints>
                     </view>
                     <connections>
@@ -66,6 +66,6 @@
     </scenes>
     <resources>
         <image name="checkInCircle2.png" width="466" height="468"/>
-        <image name="checkInPinGrey.png" width="153" height="251"/>
+        <image name="locationIcon.png" width="256" height="256"/>
     </resources>
 </document>
