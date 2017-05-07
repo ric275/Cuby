@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -8,6 +8,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Phosphate.ttc">
+            <string>Phosphate-Solid</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -18,17 +23,17 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2u-ZQ-xjc">
-                                <rect key="frame" x="123" y="527" width="128" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="132.66666666666669" y="596.66666666666652" width="149.00000000000006" height="20.333333333333371"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGY-iS-NTS">
-                                <rect key="frame" x="87" y="128" width="200" height="200"/>
+                                <rect key="frame" x="107" y="268" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="29C-lt-FWs"/>
                                     <constraint firstAttribute="height" constant="200" id="YuR-hh-hlA"/>
@@ -36,22 +41,26 @@
                                 <state key="normal" title="Check in" image="checkInCircle2.png"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBA-h1-WgW">
-                                <rect key="frame" x="123" y="164" width="128" height="128"/>
+                                <rect key="frame" x="143" y="304" width="128" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="9dc-9k-7bz"/>
                                     <constraint firstAttribute="width" constant="128" id="scW-5W-ruO"/>
                                 </constraints>
                                 <state key="normal" image="locationIcon.png"/>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jackPlaceHolder.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="PmE-Sa-t5x">
+                                <rect key="frame" x="344" y="28" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cGY-iS-NTS" secondAttribute="bottom" constant="339" id="6NA-9a-NvH"/>
                             <constraint firstItem="rBA-h1-WgW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8C7-ir-OPh"/>
                             <constraint firstItem="K2u-ZQ-xjc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HKH-Ag-drT"/>
                             <constraint firstItem="cGY-iS-NTS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PVb-gf-jFE"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="K2u-ZQ-xjc" secondAttribute="bottom" constant="119" id="SCn-1j-Wo4"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rBA-h1-WgW" secondAttribute="bottom" constant="375" id="ocg-Re-Pdt"/>
+                            <constraint firstItem="cGY-iS-NTS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="VEx-X7-vdN"/>
+                            <constraint firstItem="rBA-h1-WgW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Ybi-fZ-RVM"/>
                         </constraints>
                     </view>
                     <connections>
@@ -61,11 +70,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-79.200000000000003" y="129.98500749625188"/>
+            <point key="canvasLocation" x="-79.710144927536234" y="129.61956521739131"/>
         </scene>
     </scenes>
     <resources>
         <image name="checkInCircle2.png" width="466" height="468"/>
+        <image name="jackPlaceHolder.jpg" width="960" height="960"/>
         <image name="locationIcon.png" width="256" height="256"/>
     </resources>
 </document>

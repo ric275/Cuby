@@ -48,14 +48,14 @@ class ViewController: UIViewController {
         
         //Play background video
         
-        let theURL = Bundle.main.url(forResource:"test2", withExtension: "mp4")
+        let theURL = Bundle.main.url(forResource:"city2", withExtension: "mp4")
         
         avPlayer = AVPlayer(url: theURL!)
         avPlayerLayer = AVPlayerLayer(player: avPlayer)
         avPlayerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
         avPlayer.volume = 0
         avPlayer.actionAtItemEnd = .none
-        avPlayer.rate = 0.25
+        avPlayer.rate = 1
         
         avPlayerLayer.frame = view.layer.bounds
         view.backgroundColor = .clear
