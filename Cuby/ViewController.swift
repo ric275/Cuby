@@ -8,8 +8,10 @@
 
 import UIKit
 import AVFoundation
+import MapKit
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
     
     //Hide Status Bar
     
@@ -19,6 +21,8 @@ class ViewController: UIViewController {
     
     //Outlets
 
+    @IBOutlet weak var map: MKMapView!
+    
     @IBOutlet weak var checkInButton: UIButton!
     
     @IBOutlet weak var topCheckInButton: UIButton!
@@ -30,6 +34,7 @@ class ViewController: UIViewController {
     var avPlayer: AVPlayer!
     var avPlayerLayer: AVPlayerLayer!
     var paused: Bool = false
+    let manager = CLLocationManager()
     
     //viewDidLoad
 
@@ -65,7 +70,40 @@ class ViewController: UIViewController {
                                                selector: #selector(playerItemDidReachEnd(notification:)),
                                                name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
                                                object: avPlayer.currentItem)
+        
+        //Map
+        
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
 
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let location = locations[0]
+        
+        let span : MKCoordinateSpan = MKCoordinateSpanMake(0.01,0.01)
+        
+        let myLocation : CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+        
+        let region : MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
+        
+        map.setRegion(region, animated: true)
+        
+        self.map.showsUserLocation = true
+        
+        CLGeocoder().reverseGeocodeLocation(location) { (placemark, error) in
+            if error != nil {
+                print("error")
+            } else {
+                if let place = placemark?[0] {
+                    self.locationLabel.text = "\(place.subThoroughfare!) \(place.thoroughfare!), \(place.administrativeArea!), \(place.country!)"
+                }
+            }
+        }
         
     }
 
@@ -78,6 +116,7 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         avPlayer.play()
         paused = false
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {

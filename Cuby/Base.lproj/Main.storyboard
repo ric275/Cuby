@@ -48,29 +48,40 @@
                                 </constraints>
                                 <state key="normal" image="locationIcon.png"/>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jackPlaceHolder.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="PmE-Sa-t5x">
-                                <rect key="frame" x="344" y="28" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jackPlaceHolder.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="PmE-Sa-t5x">
+                                <rect key="frame" x="348" y="36" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="IqL-uV-3Zt"/>
+                                    <constraint firstAttribute="height" constant="50" id="Yks-gz-VHv"/>
+                                </constraints>
                             </imageView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EAx-ix-xBd">
+                                <rect key="frame" x="87" y="466" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="rBA-h1-WgW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8C7-ir-OPh"/>
                             <constraint firstItem="K2u-ZQ-xjc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HKH-Ag-drT"/>
+                            <constraint firstAttribute="trailing" secondItem="PmE-Sa-t5x" secondAttribute="trailing" constant="16" id="Klq-E1-Nua"/>
                             <constraint firstItem="cGY-iS-NTS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PVb-gf-jFE"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="K2u-ZQ-xjc" secondAttribute="bottom" constant="119" id="SCn-1j-Wo4"/>
                             <constraint firstItem="cGY-iS-NTS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="VEx-X7-vdN"/>
+                            <constraint firstItem="PmE-Sa-t5x" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="WJr-rd-aGt"/>
                             <constraint firstItem="rBA-h1-WgW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Ybi-fZ-RVM"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="checkInButton" destination="cGY-iS-NTS" id="YfL-8d-Tj5"/>
+                        <outlet property="locationLabel" destination="K2u-ZQ-xjc" id="6ae-Fl-pNB"/>
+                        <outlet property="map" destination="EAx-ix-xBd" id="LNE-wQ-Dcs"/>
                         <outlet property="topCheckInButton" destination="rBA-h1-WgW" id="FnH-7o-JMc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-79.710144927536234" y="129.61956521739131"/>
+            <point key="canvasLocation" x="-80.799999999999997" y="129.08545727136433"/>
         </scene>
     </scenes>
     <resources>
