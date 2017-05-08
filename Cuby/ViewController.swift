@@ -90,13 +90,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             } else {
                 if let place = placemark?[0] {
                     
-                    if place.subThoroughfare != nil {
+                    if place.subThoroughfare != nil || place.thoroughfare != nil || place.locality != nil || place.country != nil {
                         
-                        self.locationLabel.text = "\(place.subThoroughfare!) \(place.thoroughfare!), \(place.locality!), \(place.country!)"
+                        self.locationLabel.text = "\(place.subThoroughfare) \(place.thoroughfare), \(place.locality), \(place.country)"
                         
                         
                     } else {
-                        self.locationLabel.text = "Could not fetch location"
+                        self.locationLabel.text = "\(location.coordinate.latitude), \(location.coordinate.longitude)"
                     }
                     
                 }
