@@ -20,7 +20,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     //Outlets
-
+    
     @IBOutlet weak var checkInButton: UIButton!
     
     @IBOutlet weak var topCheckInButton: UIButton!
@@ -35,7 +35,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     let manager = CLLocationManager()
     
     //viewDidLoad
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -75,7 +75,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
-
+        
         
     }
     
@@ -83,30 +83,41 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         let location = locations[0]
         
-               
+        
         CLGeocoder().reverseGeocodeLocation(location) { (placemark, error) in
             if error != nil {
                 print("error")
             } else {
                 if let place = placemark?[0] {
                     
-                    if place.subThoroughfare != nil || place.thoroughfare != nil || place.locality != nil || place.country != nil {
+                    if place.subThoroughfare != nil && place.thoroughfare != nil && place.locality != nil && place.country != nil {
                         
-                        self.locationLabel.text = "\(place.subThoroughfare) \(place.thoroughfare), \(place.locality), \(place.country)"
+                        self.locationLabel.text = "\(place.subThoroughfare!) \(place.thoroughfare!), \(place.locality!), \(place.country!)"
                         
+                    } else if place.thoroughfare != nil && place.locality != nil && place.country != nil {
+                        
+                        self.locationLabel.text = "\(place.thoroughfare!), \(place.locality!), \(place.country!)"
+                        
+                    } else if place.locality != nil && place.country != nil {
+                        self.locationLabel.text = "\(place.locality!), \(place.country!)"
+                        
+                    } else if place.country != nil {
+                        self.locationLabel.text = "\(place.country!)"
                         
                     } else {
                         self.locationLabel.text = "\(location.coordinate.latitude), \(location.coordinate.longitude)"
                     }
                     
+                    
+                    
                 }
                 
-                }
             }
         }
+    }
     
     
-
+    
     func playerItemDidReachEnd(notification: Notification) {
         let p: AVPlayerItem = notification.object as! AVPlayerItem
         p.seek(to: kCMTimeZero)
@@ -123,7 +134,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidDisappear(animated)
         avPlayer.pause()
         paused = true
-            }
-        
-
+    }
+    
+    
 }
