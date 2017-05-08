@@ -21,8 +21,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     //Outlets
 
-    @IBOutlet weak var map: MKMapView!
-    
     @IBOutlet weak var checkInButton: UIButton!
     
     @IBOutlet weak var topCheckInButton: UIButton!
@@ -85,27 +83,29 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         let location = locations[0]
         
-        let span : MKCoordinateSpan = MKCoordinateSpanMake(0.01,0.01)
-        
-        let myLocation : CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
-        
-        let region : MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
-        
-        map.setRegion(region, animated: true)
-        
-        self.map.showsUserLocation = true
-        
+               
         CLGeocoder().reverseGeocodeLocation(location) { (placemark, error) in
             if error != nil {
                 print("error")
             } else {
                 if let place = placemark?[0] {
-                    self.locationLabel.text = "\(place.subThoroughfare!) \(place.thoroughfare!), \(place.administrativeArea!), \(place.country!)"
+                    
+                    if place.subThoroughfare != nil {
+                        
+                        self.locationLabel.text = "\(place.subThoroughfare!) \(place.thoroughfare!), \(place.locality!), \(place.country!)"
+                        
+                        
+                    } else {
+                        self.locationLabel.text = "Could not fetch location"
+                    }
+                    
+                }
+                
                 }
             }
         }
-        
-    }
+    
+    
 
     func playerItemDidReachEnd(notification: Notification) {
         let p: AVPlayerItem = notification.object as! AVPlayerItem
@@ -123,7 +123,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidDisappear(animated)
         avPlayer.pause()
         paused = true
-    }
+            }
+        
+
 }
-
-

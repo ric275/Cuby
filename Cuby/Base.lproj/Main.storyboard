@@ -26,12 +26,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2u-ZQ-xjc">
-                                <rect key="frame" x="132.66666666666669" y="596.66666666666652" width="149.00000000000006" height="20.333333333333371"/>
-                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGY-iS-NTS">
                                 <rect key="frame" x="107" y="268" width="200" height="200"/>
                                 <constraints>
@@ -55,10 +49,12 @@
                                     <constraint firstAttribute="height" constant="50" id="Yks-gz-VHv"/>
                                 </constraints>
                             </imageView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EAx-ix-xBd">
-                                <rect key="frame" x="87" y="466" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fetching Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2u-ZQ-xjc">
+                                <rect key="frame" x="131" y="533" width="153.00000000000006" height="21"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -66,16 +62,15 @@
                             <constraint firstItem="K2u-ZQ-xjc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HKH-Ag-drT"/>
                             <constraint firstAttribute="trailing" secondItem="PmE-Sa-t5x" secondAttribute="trailing" constant="16" id="Klq-E1-Nua"/>
                             <constraint firstItem="cGY-iS-NTS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PVb-gf-jFE"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="K2u-ZQ-xjc" secondAttribute="bottom" constant="119" id="SCn-1j-Wo4"/>
                             <constraint firstItem="cGY-iS-NTS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="VEx-X7-vdN"/>
                             <constraint firstItem="PmE-Sa-t5x" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="WJr-rd-aGt"/>
+                            <constraint firstItem="K2u-ZQ-xjc" firstAttribute="top" secondItem="cGY-iS-NTS" secondAttribute="bottom" constant="65" id="XaX-uB-LrB"/>
                             <constraint firstItem="rBA-h1-WgW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Ybi-fZ-RVM"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="checkInButton" destination="cGY-iS-NTS" id="YfL-8d-Tj5"/>
                         <outlet property="locationLabel" destination="K2u-ZQ-xjc" id="6ae-Fl-pNB"/>
-                        <outlet property="map" destination="EAx-ix-xBd" id="LNE-wQ-Dcs"/>
                         <outlet property="topCheckInButton" destination="rBA-h1-WgW" id="FnH-7o-JMc"/>
                     </connections>
                 </viewController>
