@@ -27,6 +27,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var locationLabel: UILabel!
     
+    @IBOutlet weak var userPicture: UIButton!
+   
+    
     //Variables
     
     var avPlayer: AVPlayer!
@@ -39,37 +42,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector:#selector(ViewController.rotateIcon), name:NSNotification.Name.UIApplicationWillEnterForeground, object:UIApplication.shared)
+        
+        NotificationCenter.default.addObserver(self, selector:#selector(ViewController.playVideo), name:NSNotification.Name.UIApplicationDidBecomeActive, object:UIApplication.shared)
+        
         //Rotate icon
         
-        let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
-        rotateAnimation.fromValue = 0.0
-        rotateAnimation.toValue = 360.0
-        rotateAnimation.repeatCount = HUGE
-        rotateAnimation.duration = 450
-        
-        checkInButton.layer.add(rotateAnimation, forKey: "myAnimationKey");
+        rotateIcon()
         
         //Play background video
         
-        let theURL = Bundle.main.url(forResource:"city2", withExtension: "mp4")
+        playVideo()
         
-        avPlayer = AVPlayer(url: theURL!)
-        avPlayerLayer = AVPlayerLayer(player: avPlayer)
-        avPlayerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
-        avPlayer.volume = 0
-        avPlayer.actionAtItemEnd = .none
-        avPlayer.rate = 1
-        
-        avPlayerLayer.frame = view.layer.bounds
-        view.backgroundColor = .clear
-        view.layer.insertSublayer(avPlayerLayer, at: 0)
-        
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(playerItemDidReachEnd(notification:)),
-                                               name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
-                                               object: avPlayer.currentItem)
-        
-        //Map
+        //Location
         
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
@@ -108,19 +93,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                         self.locationLabel.text = "\(location.coordinate.latitude), \(location.coordinate.longitude)"
                     }
                     
-                    
-                    
                 }
                 
             }
         }
+        
+        
+    
+        
+        
+        
+        
     }
     
-    
-    
-    func playerItemDidReachEnd(notification: Notification) {
-        let p: AVPlayerItem = notification.object as! AVPlayerItem
-        p.seek(to: kCMTimeZero)
+    override func viewWillAppear(_ animated: Bool) {
+        viewDidLoad()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -136,5 +123,56 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         paused = true
     }
     
+    func rotateIcon() {
+        
+        let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
+        rotateAnimation.fromValue = 0.0
+        rotateAnimation.toValue = 360.0
+        rotateAnimation.repeatCount = HUGE
+        rotateAnimation.duration = 450
+        
+        
+        checkInButton.layer.add(rotateAnimation, forKey: "myAnimationKey");
+        
+    }
     
+    func playVideo() {
+        
+        let theURL = Bundle.main.url(forResource:"city2", withExtension: "mp4")
+        
+        avPlayer = AVPlayer(url: theURL!)
+        avPlayerLayer = AVPlayerLayer(player: avPlayer)
+        avPlayerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
+        avPlayer.volume = 0
+        avPlayer.actionAtItemEnd = .none
+        //avPlayer.rate = 1
+        
+        avPlayerLayer.frame = view.layer.bounds
+        view.backgroundColor = .clear
+        view.layer.insertSublayer(avPlayerLayer, at: 0)
+        
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(playerItemDidReachEnd(notification:)),
+                                               name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
+                                               object: avPlayer.currentItem)
+        avPlayer.play()
+        
+    }
+    
+    func playerItemDidReachEnd(notification: Notification) {
+        let p: AVPlayerItem = notification.object as! AVPlayerItem
+        p.seek(to: kCMTimeZero)
+    }
+
+    @IBAction func pictureTapped(_ sender: Any) {
+        
+        performSegue(withIdentifier: "profileSegue", sender: nil)
+    }
+    
+    
+    
+    
+    
+    //Final declaration
 }
