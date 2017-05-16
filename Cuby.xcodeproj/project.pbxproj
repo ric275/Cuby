@@ -13,7 +13,6 @@
 		041F0B251EBFD069002152CD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041F0B241EBFD069002152CD /* CoreLocation.framework */; };
 		048C81E71EBCA59A001A15AB /* locationIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 048C81E61EBCA59A001A15AB /* locationIcon.png */; };
 		049D9F2D1ECA3D7A00787076 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D9F2C1ECA3D7A00787076 /* ProfileViewController.swift */; };
-		049D9F2F1ECA5F0600787076 /* fullCheckInIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 049D9F2E1ECA5F0600787076 /* fullCheckInIcon.png */; };
 		04B58F511EB91978001B24D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B58F501EB91978001B24D1 /* AppDelegate.swift */; };
 		04B58F531EB91978001B24D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B58F521EB91978001B24D1 /* ViewController.swift */; };
 		04B58F561EB91978001B24D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B58F541EB91978001B24D1 /* Main.storyboard */; };
@@ -50,7 +49,6 @@
 		041F0B241EBFD069002152CD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		048C81E61EBCA59A001A15AB /* locationIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locationIcon.png; sourceTree = "<group>"; };
 		049D9F2C1ECA3D7A00787076 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		049D9F2E1ECA5F0600787076 /* fullCheckInIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fullCheckInIcon.png; sourceTree = "<group>"; };
 		04B58F4D1EB91978001B24D1 /* Cuby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cuby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B58F501EB91978001B24D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04B58F521EB91978001B24D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; usesTabs = 0; };
@@ -138,7 +136,6 @@
 				04B58F811EBA28DB001B24D1 /* checkInCircle.png */,
 				04B58F8D1EBA3B12001B24D1 /* checkInCircle2.png */,
 				048C81E61EBCA59A001A15AB /* locationIcon.png */,
-				049D9F2E1ECA5F0600787076 /* fullCheckInIcon.png */,
 				041F0B1F1EBF54C2002152CD /* jackPlaceHolder.jpg */,
 				041F0B211EBFAB91002152CD /* city2.mp4 */,
 				041F0B1D1EBF5278002152CD /* Phosphate.ttc */,
@@ -277,7 +274,6 @@
 				041F0B221EBFABB6002152CD /* city2.mp4 in Resources */,
 				041F0B1E1EBF52CF002152CD /* Phosphate.ttc in Resources */,
 				04B58F5E1EB91978001B24D1 /* LaunchScreen.storyboard in Resources */,
-				049D9F2F1ECA5F0600787076 /* fullCheckInIcon.png in Resources */,
 				04B58F5B1EB91978001B24D1 /* Assets.xcassets in Resources */,
 				048C81E71EBCA59A001A15AB /* locationIcon.png in Resources */,
 				041F0B201EBF54C2002152CD /* jackPlaceHolder.jpg in Resources */,

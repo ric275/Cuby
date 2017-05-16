@@ -10,7 +10,23 @@ import UIKit
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    //Custom colours.
+    
+    let cubyRed:UIColor = UIColor(red: 180/255.0, green: 20/255.0, blue: 70/255.0, alpha: 1.0)
+    
     @IBOutlet weak var postsTable: UITableView!
+    
+    @IBOutlet weak var scoreLabel: UILabel!
+    
+    @IBOutlet weak var rankLabel: UILabel!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var userNameLabel: UILabel!
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,8 +34,13 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         postsTable.delegate = self
         postsTable.dataSource = self
         
-        view.backgroundColor = .red
+        view.backgroundColor = cubyRed
         
+        scoreLabel.textColor = .white
+        rankLabel.textColor = .white
+        nameLabel.textColor = .white
+        userNameLabel.textColor = .white
+
         
         // Do any additional setup after loading the view.
     }

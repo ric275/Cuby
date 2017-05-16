@@ -37,10 +37,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var paused: Bool = false
     let manager = CLLocationManager()
     
+    //Custom colours.
+    
+    let cubyRed:UIColor = UIColor(red: 180/255.0, green: 20/255.0, blue: 70/255.0, alpha: 1.0)
+    
     //viewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationLabel.textColor = cubyRed
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         NotificationCenter.default.addObserver(self, selector:#selector(ViewController.rotateIcon), name:NSNotification.Name.UIApplicationWillEnterForeground, object:UIApplication.shared)
         
@@ -108,6 +116,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         viewDidLoad()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     override func viewDidAppear(_ animated: Bool) {
