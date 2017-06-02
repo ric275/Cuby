@@ -46,8 +46,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locationLabel.textColor = cubyRed
-        
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         NotificationCenter.default.addObserver(self, selector:#selector(ViewController.rotateIcon), name:NSNotification.Name.UIApplicationWillEnterForeground, object:UIApplication.shared)
@@ -106,16 +104,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             }
         }
         
-        
-    
-        
-        
-        
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        viewDidLoad()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -182,6 +170,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         performSegue(withIdentifier: "profileSegue", sender: nil)
     }
     
+    @IBAction func redButtonTapped(_ sender: Any) {
+        
+        performSegue(withIdentifier: "composeSegue", sender: nil)
+        
+    }
     
     
     

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -42,9 +42,13 @@
                                     <constraint firstAttribute="width" constant="128" id="scW-5W-ruO"/>
                                 </constraints>
                                 <state key="normal" image="locationIcon.png"/>
+                                <connections>
+                                    <action selector="redButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YYP-eL-rPy"/>
+                                    <segue destination="Y8m-PH-2he" kind="show" identifier="composeSegue" id="AQY-Ms-xdN"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fetching Location" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2u-ZQ-xjc">
-                                <rect key="frame" x="130.66666666666669" y="533" width="153.00000000000006" height="20"/>
+                                <rect key="frame" x="131" y="533" width="153" height="21"/>
                                 <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -126,7 +130,7 @@
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jack Taylor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5b-cb-S5l">
-                                <rect key="frame" x="20" y="239" width="150" height="20.666666666666686"/>
+                                <rect key="frame" x="20" y="239" width="150" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="400" id="RSy-f2-Oxn"/>
                                     <constraint firstAttribute="width" constant="150" id="lef-OB-yWc"/>
@@ -248,13 +252,13 @@
                                 <exclude reference="W51-oe-Axj"/>
                                 <exclude reference="2wE-U0-IVN"/>
                                 <exclude reference="7Mw-7l-XNV"/>
-                                <exclude reference="2D3-sb-srN"/>
-                                <exclude reference="3br-E7-7oq"/>
                                 <exclude reference="NhU-8P-y0x"/>
                                 <exclude reference="XsQ-jh-1wJ"/>
                                 <exclude reference="gEe-8Z-RPq"/>
                                 <exclude reference="njS-ol-8Gf"/>
                                 <exclude reference="vND-Pl-2nc"/>
+                                <exclude reference="2D3-sb-srN"/>
+                                <exclude reference="3br-E7-7oq"/>
                                 <exclude reference="p4O-WK-AFX"/>
                                 <exclude reference="rjH-kQ-9Ub"/>
                                 <exclude reference="Sh1-Xw-err"/>
@@ -276,17 +280,17 @@
                                 <include reference="7Mw-7l-XNV"/>
                                 <exclude reference="IQU-0L-OJ2"/>
                                 <exclude reference="i6s-ww-qIF"/>
-                                <include reference="2D3-sb-srN"/>
-                                <include reference="3br-E7-7oq"/>
-                                <exclude reference="g2B-wS-euT"/>
-                                <exclude reference="kWc-5i-ON7"/>
-                                <exclude reference="uOA-bv-mOq"/>
                                 <exclude reference="KUf-eo-H7r"/>
                                 <exclude reference="NhU-8P-y0x"/>
                                 <include reference="XsQ-jh-1wJ"/>
                                 <exclude reference="gEe-8Z-RPq"/>
                                 <exclude reference="njS-ol-8Gf"/>
                                 <include reference="vND-Pl-2nc"/>
+                                <include reference="2D3-sb-srN"/>
+                                <include reference="3br-E7-7oq"/>
+                                <exclude reference="g2B-wS-euT"/>
+                                <exclude reference="kWc-5i-ON7"/>
+                                <exclude reference="uOA-bv-mOq"/>
                                 <include reference="p4O-WK-AFX"/>
                                 <include reference="rjH-kQ-9Ub"/>
                                 <include reference="Sh1-Xw-err"/>
@@ -321,7 +325,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tHe-qo-jE9" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="jYQ-ax-zwe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jYQ-ax-zwe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -334,10 +338,131 @@
             </objects>
             <point key="canvasLocation" x="692.75362318840587" y="128.80434782608697"/>
         </scene>
+        <!--New Check In-->
+        <scene sceneID="3Aa-K5-Jws">
+            <objects>
+                <viewController id="QQD-d6-ZNl" customClass="ComposeViewController" customModule="Cuby" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dbA-W3-bzA"/>
+                        <viewControllerLayoutGuide type="bottom" id="wtF-Ph-BCp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dp8-uO-Ngl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIX-p5-PtV">
+                                <rect key="frame" x="20" y="94" width="374" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="HFW-l7-Jfk"/>
+                                    <constraint firstAttribute="width" constant="374" id="Zui-uD-BMx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="20"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9K1-xF-SOb">
+                                <rect key="frame" x="198" y="64" width="18" height="21"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What's here? e.g. Festival, party, coffee shop... " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KYo-3q-S7o">
+                                <rect key="frame" x="20" y="139" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a little more info... e.g Drinks with Charlie and Ed." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B6T-eZ-L4e">
+                                <rect key="frame" x="20" y="191" width="374" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="kH8-Uc-FnL"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VfG-OK-goK">
+                                <rect key="frame" x="40" y="359" width="135" height="135"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="135" id="pK2-RM-KS1"/>
+                                    <constraint firstAttribute="width" constant="135" id="z2P-nk-GCQ"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="addPicturePlaceHolder.png"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mdx-NW-U0t">
+                                <rect key="frame" x="166" y="587" width="82" height="36"/>
+                                <fontDescription key="fontDescription" name="Phosphate-Solid" family="Phosphate" pointSize="20"/>
+                                <state key="normal" title="Check In">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxz-vG-qcb">
+                                <rect key="frame" x="239" y="359" width="135" height="135"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="135" id="6bm-xa-STL"/>
+                                    <constraint firstAttribute="width" constant="135" id="85b-VK-WmU"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="addPicturePlaceHolder.png"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="dxz-vG-qcb" secondAttribute="trailing" constant="20" id="3Mj-cN-rVQ"/>
+                            <constraint firstItem="VfG-OK-goK" firstAttribute="leading" secondItem="dp8-uO-Ngl" secondAttribute="leadingMargin" constant="20" id="6Kj-Cb-G0m"/>
+                            <constraint firstItem="B6T-eZ-L4e" firstAttribute="top" secondItem="KYo-3q-S7o" secondAttribute="bottom" constant="22" id="7ah-K4-iZK"/>
+                            <constraint firstItem="B6T-eZ-L4e" firstAttribute="centerX" secondItem="dp8-uO-Ngl" secondAttribute="centerX" id="B9P-8F-vz6"/>
+                            <constraint firstItem="dxz-vG-qcb" firstAttribute="top" secondItem="B6T-eZ-L4e" secondAttribute="bottom" constant="68" id="Chq-4I-8ig"/>
+                            <constraint firstItem="VfG-OK-goK" firstAttribute="top" secondItem="B6T-eZ-L4e" secondAttribute="bottom" constant="68" id="FbD-Ie-4TU"/>
+                            <constraint firstItem="KYo-3q-S7o" firstAttribute="centerX" secondItem="dp8-uO-Ngl" secondAttribute="centerX" id="Gnx-eP-gcc"/>
+                            <constraint firstItem="9K1-xF-SOb" firstAttribute="top" secondItem="dbA-W3-bzA" secondAttribute="bottom" id="I5A-E6-Dab"/>
+                            <constraint firstItem="9K1-xF-SOb" firstAttribute="centerX" secondItem="dp8-uO-Ngl" secondAttribute="centerX" id="JPZ-2k-Cpf"/>
+                            <constraint firstItem="KYo-3q-S7o" firstAttribute="top" secondItem="YIX-p5-PtV" secondAttribute="bottom" constant="21" id="Lbc-2M-h6D"/>
+                            <constraint firstItem="YIX-p5-PtV" firstAttribute="centerX" secondItem="dp8-uO-Ngl" secondAttribute="centerX" id="OeU-RY-g1O"/>
+                            <constraint firstItem="KYo-3q-S7o" firstAttribute="width" secondItem="YIX-p5-PtV" secondAttribute="width" id="Ppa-21-DqM"/>
+                            <constraint firstItem="B6T-eZ-L4e" firstAttribute="width" secondItem="KYo-3q-S7o" secondAttribute="width" id="T8e-gB-4Zp"/>
+                            <constraint firstItem="mdx-NW-U0t" firstAttribute="centerX" secondItem="dp8-uO-Ngl" secondAttribute="centerX" id="Zll-E0-Kol"/>
+                            <constraint firstItem="wtF-Ph-BCp" firstAttribute="top" secondItem="mdx-NW-U0t" secondAttribute="bottom" constant="113" id="kdk-5k-CuV"/>
+                            <constraint firstItem="YIX-p5-PtV" firstAttribute="top" secondItem="dbA-W3-bzA" secondAttribute="bottom" constant="30" id="xEr-O6-3zj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Check In" id="TJC-Ty-fQe">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Zej-ks-Tp7">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="L8w-BZ-oOx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MfZ-e7-rwh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1600.0000000000002" y="898.36956521739137"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="m8e-I0-kxC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y8m-PH-2he" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pLS-IT-WWL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QQD-d6-ZNl" kind="relationship" relationship="rootViewController" id="Dj5-Dn-PHZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yGq-QZ-208" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="692.75362318840587" y="898.36956521739137"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="addPicturePlaceHolder.png" width="640" height="640"/>
         <image name="checkInCircle2.png" width="466" height="468"/>
         <image name="jackPlaceHolder.jpg" width="960" height="960"/>
         <image name="locationIcon.png" width="256" height="256"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="L8w-BZ-oOx"/>
+    </inferredMetricsTieBreakers>
 </document>
